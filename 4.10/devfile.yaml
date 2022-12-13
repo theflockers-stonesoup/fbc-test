@@ -1,0 +1,24 @@
+schemaVersion: 2.2.0
+metadata:
+  name: fbc-4.10
+  language: go
+components:
+  - name: image-build
+    image:
+      imageName: ""
+      dockerfile:
+        uri: catalog.Dockerfile
+        buildContext: "4.10"
+  - name: kubernetes
+    kubernetes:
+      inlined: placeholder
+    attributes:
+      deployment/container-port: 8080
+      deployment/cpuRequest: "1"
+      deployment/memoryRequest: 512Mi
+      deployment/replicas: 1
+      deployment/storageRequest: "0"
+commands:
+  - id: build-image
+    apply:
+      component: image-build
