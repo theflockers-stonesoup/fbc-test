@@ -1,7 +1,7 @@
 schemaVersion: 2.2.0
 metadata:
   name: fbc-4.10
-  language: go
+  language: fbc
 components:
   - name: image-build
     image:
