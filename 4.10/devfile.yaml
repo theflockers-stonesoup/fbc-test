@@ -13,8 +13,8 @@ components:
     kubernetes:
       inlined: placeholder
     attributes:
-      deployment/container-port: 8080
-      deployment/cpuRequest: "1"
+      deployment/container-port: 50051
+      deployment/cpuRequest: "100m"
       deployment/memoryRequest: 512Mi
       deployment/replicas: 1
       deployment/storageRequest: "0"
