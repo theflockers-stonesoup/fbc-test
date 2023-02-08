@@ -8,7 +8,7 @@ metadata:
 components:
   - name: image-build
     image:
-      imageName: fbc:latest
+      imageName: ""
       dockerfile:
         uri: catalog.Dockerfile
         buildContext: "4.13"
