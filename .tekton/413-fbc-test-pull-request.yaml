@@ -18,13 +18,13 @@ metadata:
 spec:
   params:
   - name: dockerfile
-    value: https://raw.githubusercontent.com/scoheb/fbc-test/hac/catalog.Dockerfile
+    value: https://raw.githubusercontent.com/scoheb/fbc-test/main/catalog.Dockerfile
   - name: git-url
     value: '{{repo_url}}'
   - name: output-image
     value: quay.io/scoheb/user-workload:on-pr-{{revision}}
   - name: path-context
-    value: hac/4.13
+    value: "4.13"
   - name: revision
     value: '{{revision}}'
   pipelineSpec:
