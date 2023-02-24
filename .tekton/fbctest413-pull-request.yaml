@@ -24,7 +24,7 @@ spec:
   - name: output-image
     value: quay.io/scoheb/user-workload:on-pr-{{revision}}
   - name: path-context
-    value: 4.13/4.13
+    value: "4.13"
   - name: revision
     value: '{{revision}}'
   pipelineSpec:
