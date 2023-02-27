@@ -9,7 +9,7 @@ metadata:
     pipelinesascode.tekton.dev/on-target-branch: '[main,master]'
   creationTimestamp: null
   labels:
-    appstudio.openshift.io/application: fbc-e2e-test
+    appstudio.openshift.io/application: fbc-example
     appstudio.openshift.io/component: fbctest413
     pipelines.appstudio.openshift.io/type: build
   name: fbctest413-on-push
@@ -164,7 +164,7 @@ spec:
       runAfter:
       - prefetch-dependencies
       taskRef:
-        bundle: quay.io/redhat-appstudio-tekton-catalog/task-buildah:0.1@sha256:2605e8271838f1af83263a4330e7e3eeccbff56280ce68092e87a2e18e8df44c
+        bundle: quay.io/redhat-appstudio-tekton-catalog/task-buildah:0.1@sha256:3ec1cd16f0467534db8e4d1ffcacfb18a5801acc763e8dcd4d92c292e3aa3de6
         name: buildah
       when:
       - input: $(tasks.init.results.build)
@@ -199,7 +199,7 @@ spec:
       runAfter:
       - sanity-inspect-image
       taskRef:
-        bundle: quay.io/redhat-appstudio-tekton-catalog/task-sanity-label-check:0.1@sha256:b395d34d8388fb15ac1fce8787809b54fb49f2e03a910abf5b4685511fc4caee
+        bundle: quay.io/redhat-appstudio-tekton-catalog/task-sanity-label-check:0.1@sha256:8d011078bf48ca40b06752a6f777b441769b88731b3ef2d8458fbc02ab575ac9
         name: sanity-label-check
       when:
       - input: $(params.skip-checks)
@@ -216,7 +216,7 @@ spec:
       runAfter:
       - sanity-inspect-image
       taskRef:
-        bundle: quay.io/redhat-appstudio-tekton-catalog/task-sanity-label-check:0.1@sha256:b395d34d8388fb15ac1fce8787809b54fb49f2e03a910abf5b4685511fc4caee
+        bundle: quay.io/redhat-appstudio-tekton-catalog/task-sanity-label-check:0.1@sha256:8d011078bf48ca40b06752a6f777b441769b88731b3ef2d8458fbc02ab575ac9
         name: sanity-label-check
       when:
       - input: $(params.skip-checks)
@@ -252,7 +252,7 @@ spec:
       runAfter:
       - build-container
       taskRef:
-        bundle: quay.io/redhat-appstudio-tekton-catalog/task-clair-scan:0.1@sha256:a73a2a65988b969fa752ce82fa415beafcedfc1582fc36fd0436a9b2f1af7c85
+        bundle: quay.io/redhat-appstudio-tekton-catalog/task-clair-scan:0.1@sha256:c5a42a39f0b42911d15cdf5711017172660cb8c25fe68176cf8ac4f4098c2c7e
         name: clair-scan
       when:
       - input: $(params.skip-checks)
@@ -337,7 +337,7 @@ spec:
       runAfter:
       - fbc-validate
       taskRef:
-        bundle: quay.io/redhat-appstudio-tekton-catalog/task-fbc-related-image-check:0.1@sha256:0e9d84461ace5ffa1bcf7e42a4a9a388ef036b5434870dfaf45b2beef5f7607f
+        bundle: quay.io/redhat-appstudio-tekton-catalog/task-fbc-related-image-check:0.1@sha256:59915cba6389f1afdf94295478ee65cbbeaa835245a0b56bd0ba3104a072c8f0
         name: fbc-related-image-check
       when:
       - input: $(params.skip-checks)
