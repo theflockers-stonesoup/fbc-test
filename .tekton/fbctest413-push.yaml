@@ -323,7 +323,7 @@ spec:
       runAfter:
       - fbc-label-check
       taskRef:
-        bundle: quay.io/redhat-appstudio-tekton-catalog/task-fbc-validation:0.1@sha256:f4d6bdb1035b810eeae18abeb49b3ca76316158e597fe7d5d7590100bed8799b
+        bundle: quay.io/redhat-appstudio-tekton-catalog/task-fbc-validation:0.1@sha256:8d4f54180c2d8fb143f1b62f4900d8e17990288aef1f9661cc01cf3206c4a32f
         name: fbc-validation
       when:
       - input: $(params.skip-checks)
